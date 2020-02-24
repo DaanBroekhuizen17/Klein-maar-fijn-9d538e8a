@@ -3,20 +3,19 @@
 $input = $argv[1];
 $bedrag = floatval($input);
 
-define("geldeenheden", [
-    500,
-    200,
-    100,
+define("GELDEENHEDEN", [
     50,
     20,
     10,
     5,
+    2,
+    1
 ]);
 
 
 $restbedrag = $bedrag;
 
-foreach(geldeenheden as $euro){
+foreach(GELDEENHEDEN as $euro){
     if($restbedrag >= $euro){
         $aantalKeerEuroInRestBedrag = floor($restbedrag / $euro);
         $restbedrag = $restbedrag - $euro * $aantalKeerEuroInRestBedrag;
@@ -26,7 +25,7 @@ foreach(geldeenheden as $euro){
 
 $restbedrag = $restbedrag * 100;
 
-foreach(geldeenheden as $euro){
+foreach(GELDEENHEDEN as $euro){
     if($restbedrag >= $euro){
         $aantalKeerEuroInRestBedrag = floor($restbedrag / $euro);
         $restbedrag = round($restbedrag - $euro * $aantalKeerEuroInRestBedrag);
